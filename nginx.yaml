@@ -15,7 +15,7 @@
 									type: front-end
 							spec:
 								containers:
-									- name: nginx-container
+									- name: nginx
 									  image: nginx
 						replicaset: 3
 						selector:
