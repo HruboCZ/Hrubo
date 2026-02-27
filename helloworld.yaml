@@ -11,7 +11,6 @@ spec:
   - image: hello-world
     name: hello-world
     resources: {}
-  replicaset: 2
   dnsPolicy: ClusterFirst
   restartPolicy: Always
 status: {}
