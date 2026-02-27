@@ -15,8 +15,8 @@
 									type: front-end
 							spec:
 								containers:
-									- name: nginx
-									  image: nginx
+									-  name: nginx
+									   image: nginx
 						replicaset: 3
 						selector:
 							matchLabels:
