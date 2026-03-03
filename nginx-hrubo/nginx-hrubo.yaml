@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: docker.io/library/nginx:latest
+        image: bitnami/nginx:latest
         ports:
         - containerPort: 8080
 ---
