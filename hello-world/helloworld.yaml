@@ -9,7 +9,7 @@ metadata:
 spec:
   containers:
   - image: hello-world
-    name: docker.io/bitnami/hello-world
+    name: hello-world
     resources: {}
   dnsPolicy: ClusterFirst
   restartPolicy: Always

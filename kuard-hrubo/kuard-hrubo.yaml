@@ -5,7 +5,7 @@ metadata:
   labels:
     app: kuard
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: kuard
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: kuard
-        image: gcr.io/kuar-demo/kuard-amd64:blue
+        image: docker.io/kuard-amd64:blue
         ports:
         - containerPort: 8080
 ---
