@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: bitnami/nginx:latest
+        image: docker.io/bitnami/nginx:latest
         securityContext:
           runAsNonRoot: true
           allowPrivilegeEscalation: false
