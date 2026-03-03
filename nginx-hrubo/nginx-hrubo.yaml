@@ -5,7 +5,7 @@ metadata:
   labels:
     app: nginx
 spec:
-  replicas: 1
+  replicas: 10
   selector:
     matchLabels:
       app: nginx
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginxinc/nginx-unprivileged:latest
+        image: nginx/nginx:latest
         securityContext:
           runAsNonRoot: true
           allowPrivilegeEscalation: false
