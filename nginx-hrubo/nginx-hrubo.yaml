@@ -16,7 +16,12 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: bitnami/nginx-unprivileged:latest
+        image: bitnami/nginx:latest
+        securityContext:
+          runAsNonRoot: true
+          allowPrivilegeEscalation: false
+          seccompProfile:
+            type: RuntimeDefault
         ports:
         - containerPort: 8080
 ---
