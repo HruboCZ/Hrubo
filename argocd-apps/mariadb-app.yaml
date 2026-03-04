@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1 
+kind: Application 
+metadata: 
+   name: moje-mariadb-helm # Název aplikace v ArgoCD 
+   namespace: argocd # Namespace, kde běží ArgoCD operátor 
+spec: 
+   project: default 
+   source: 
+      repoURL: 'https://github.com/HruboCZ/Hrubo.git' # URL vašeho gitu 
+      targetRevision: HEAD # Větve (main/master) 
+      path: Helms/Hrubo-mariadb # CESTA ke složce, kde máte Chart.yaml 
+      helm: # Volitelně zde můžete přepsat hodnoty z values.yaml bez změny v Gitu 
+         valueFiles:
+           - values.yaml 
+   destination: 
+     server: 'https://kubernetes.default.svc' 
+     namespace: hrubo-db-test # Cílový namespace v OpenShiftu, kam se to nainstaluje 
+   syncPolicy: 
+      automated: # Automatická synchronizace při git push 
+         prune: true 
+         selfHeal: true 
+      syncOptions:
+        - CreateNamespace=true
