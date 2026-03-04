@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-mariadb
+spec: 
+  replicas: {{ .Values.replicaCount | default 1}} 
+  selector:
+    matchLabels:
+      app: mariadb
+  template:
+    metadata:
+      labels:
+        app: mariadb 
+    spec: 
+      containers:
+      - name: mariadb
+        image: {{ .Values.image.repository}}:{{ .Values.image.tag }}
+        env:
+         - name: MARIADB_DATABASE
+           value: {{ .Values.db.name | quote }}
+        ports:
+        - containerPort: 3306 #default one
+        env:
+        - name: MARIADB_ROOT_PASSWORD
+          value: anel # works, don't use strings

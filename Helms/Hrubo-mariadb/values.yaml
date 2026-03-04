@@ -1,0 +1,8 @@
+replicaCount: 1
+
+image: 
+  repository: docker.io/bitnami/mariadb:latest
+  tag: latest
+
+db:
+  name: my_hrubo_db
