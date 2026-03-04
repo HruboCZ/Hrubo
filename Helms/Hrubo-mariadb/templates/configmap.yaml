@@ -1,6 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: mariadb-configmap
+  name: {{ .Release.Name }}-mariadb-configmap
+  namespace: {{ .Release.Name }}-mariadb
 data:
   database_url: mariadb-internal-service #name of service
